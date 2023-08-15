@@ -102,7 +102,7 @@ let array = [
 for (let i = 0; i < array.length; i++) {
     array[i].forEach(number => {
       if (number > 0) {
-        console.log("For Loop Method 1",number);
+        console.log("For Loop Method 1",number); //^-- For Loop Method 1 -  2; 5; 10; 25; 100; 10
       }
     });
   } 
@@ -111,8 +111,48 @@ for (let i = 0; i < array.length; i++) {
 array.forEach(positiveArray => {
     positiveArray.forEach(number => {
         if(number > 0 ) {
-            console.log("forEach Method 2", number)
+            console.log("forEach Method 2", number) //^-- forEach Method 2 - 2; 5; 10; 25; 100; 10
         }
      })
 })
 
+
+//! #TASK8: მოცემულია მასივი let users = [{username: 'giorgi', status: false},{username: 'levani', status: false}, {username: 'anna', status: true} ] 
+//! კონსოლში გამოიტანეთ მარტო ის ობიექტი, რომლის status property-ის მნიშვნელობა არის true;
+
+let users = [
+    {username: 'giorgi', status: false},
+    {username: 'levani', status: false},
+    {username: 'anna', status: true}
+];
+users.forEach(user => {
+    if(user.status === true) {
+        console.log(user)  //^-- { username: 'anna', status: true }
+    }
+})
+
+//! #TASK9: მოცემულია ცვლადი, რომლის მნიშვნელობაა ნინი. ახალი if ის სინტაქსით დაწერეთ
+//! თუ ცვლადის მნიშვნელობა უდრის ნინი-ს დაიბეჭდოს - true, ყველა სხვა დანარჩენ შემთხვევაში დაიბეჭდოს - false; 
+
+let names = "Nini";
+//* -- შემოწმდა, უდრის თუ არა ცვლადი nini-ს, თუ პირობა არის TRUE დაიბეჭდება TRUE წინამდეგ შემთხვევაში FALSE
+let nameResult = (names === "Nini") ? "true" : "false"; 
+
+console.log("ცვლადი names მნიშვნელობა არის: ",nameResult); //^-- true
+
+
+//! #TASK10:მოცემულია ცვლადი, რომლის მნიშვნელობაა ნინი
+//! switch case ის საშუალებით დაწერეთ, თუ ცვლადის მნიშვნელობა უდრის ნინი-ს დაიბეჭდოს - true,ყველა სხვა დანარჩენ შემთხვევაში დაიბეჭდოს - false; 
+
+let nameSwitch = "Nini";
+let textCheck;
+
+//* -- შეამოწმებს ცვლადის namesSwitch მნიშვნელობას: იბეჭდება true თუ ტოლია Niniს წინააღმდეგ შემთხვევაში იქმმება false
+switch(nameSwitch) {
+    case "Nini":
+    textCheck = "true"
+    break;
+    default: textCheck = "false"
+}
+
+console.log(textCheck) //^-- true
