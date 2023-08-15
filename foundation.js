@@ -24,3 +24,30 @@ console.log(arrayFilter) //^-- გაფილტრული მასივი
 
 
 //! #TASK3:მოცემულია მასივი let array3= [1, 2, 3, 4, 5]; ციკლის საშუალებით გამოთვალეთ რიცხვების ჯამი
+
+//* -- Method 1 reduce
+let array3= [1, 2, 3, 4, 5];
+
+let numberSum = array3.reduce((total,num) => total + num);  //TODO: --reduce მეთოდი ითვლის ჯამს ~ გადაეცემა ორი პარამეტრი
+console.log("array3 რიცხვების ჯამი:", numberSum)  //^-- array3 რიცხვების ჯამი: 15
+
+
+//* -- Method 2 for loop
+let loopArray3 = [1, 2, 3, 4, 5];
+let numSum = 0;
+for (let i = 0; i < loopArray3.length; i++) {
+    numSum += loopArray3[i];
+}
+
+console.log("loopArray3 რიცხვების ჯამი:", numSum);  //^-- loopArray3 რიცხვების ჯამი: 15
+
+
+//! #TASK4: მოცემულია მასივი: let array4 = [1, 2, 3, 7, 6, 9]; გამოთვალეთ საშუალო არითმტიკული (ჯამი გავყოთ ელემნტების რაოდენობაზე)
+
+let array4 = [1, 2, 3, 7, 6, 9];
+
+//* -- reduce მეთოდი დაითვლის მასივის რიცხვების ჯამს, ჯამის გაგების შემდეგ მას ვყოფთ array4.lengthზე საშუალო არიტმეტიკულის გასაგებად და ვამრგვალებთ ერთ ათწილადამდე
+let sumArray4 = array4.reduce((total,num) => total + num, 0);
+let averageResult = (sumArray4 / array4.length).toFixed(1);  //TODO: -- toFixed(1) დაამრგვალებს გამოთვლილ საშუალოს ერთ ათწილადამდე
+
+console.log("array4 საშუალო არითმტიკული არის:", averageResult) //^--array4 საშუალო არის 4.7
