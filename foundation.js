@@ -51,3 +51,68 @@ let sumArray4 = array4.reduce((total,num) => total + num, 0);
 let averageResult = (sumArray4 / array4.length).toFixed(1);  //TODO: -- toFixed(1) დაამრგვალებს გამოთვლილ საშუალოს ერთ ათწილადამდე
 
 console.log("array4 საშუალო არითმტიკული არის:", averageResult) //^--array4 საშუალო არის 4.7
+
+
+//! #TASK5:  მოცემულია ობიექტი: let user = {firstname: "giorgi",lastname: "smith",age: 25,studentstatus: "active"
+//! ამოიღეთ user ცვლადის სტუდენტის სტატუსი; 
+
+let user = {
+    firstname: "giorgi",
+    lastname: "smith",
+    age: 25,
+    studentstatus: "active"
+  };
+
+  console.log("students Status:", user.studentstatus); //^-- students Status: active
+
+
+//! #TASK6:  მოცემულია ობიექტი: let userAge = {name: 'giorgi',  age:  20, studentstatus: 'active'}
+//! თუ უსერის ასაკი ნაკლებია 18ზე და სტუდენტის სტატუსი აქტიურია დაიბეჭდოს ტექსტი:  hello;
+//! თუ უსერის სახელი უდრის ლევანს მაშინ დაიბეჭდოს ტექსტი: hello levani;
+//! თუ უსერის სტუდენტის სტატუსი აქტიურია ან უსერის ასაკი ნაკლებია 25ზე დაიბეჭდოს ტექსტი: hello world;
+//! ყველა დანარჩენ შემთხვევაში დაილოგოს ტექსტი: error;
+
+
+let userAge = {
+    name: 'giorgi',
+    age:  20,
+    studentstatus: 'active'
+}
+
+if (userAge.age < 18 && userAge.studentstatus === 'active') {
+    console.log("Hello")
+} else if (userAge.name === "Levani") {
+    console.log("Hello Levani")
+} else if (userAge.studentstatus === 'active' || userAge.age < 25) {
+  console.log("Hello World")   //^-- ამ შემთხვევაში დაიბეჭდება : Hello World
+} else {
+    console.log("Error")
+}
+
+//! #TASK7: მოცემული მასივიდან for ციკლის საშუალებით კონსოლში გამოიტანეთ მხოლოდ დადებითი რიცხვები:
+//! let array = [  [2, -3, 5, 10],  [25, -24, -11, 100],  [-6, -7, 10],];
+
+let array = [
+    [2, -3, 5, 10],
+    [25, -24, -11, 100],
+    [-6, -7, 10],
+  ];
+
+ //* -- Method 1 forEach for loop
+for (let i = 0; i < array.length; i++) {
+    array[i].forEach(number => {
+      if (number > 0) {
+        console.log("For Loop Method 1",number);
+      }
+    });
+  } 
+
+//* -- Method 2 forEach  
+array.forEach(positiveArray => {
+    positiveArray.forEach(number => {
+        if(number > 0 ) {
+            console.log("forEach Method 2", number)
+        }
+     })
+})
+

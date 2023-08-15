@@ -1,6 +1,23 @@
-let array4 = [1, 2, 3, 7, 6, 9];
+let array = [
+    [2, -3, 5, 10],
+    [25, -24, -11, 100],
+    [-6, -7, 10],
+  ];
 
-let sumArray4 = array4.reduce((total,num) => total + num, 0);
-let averageResult = (sumArray4 / array4.length).toFixed(2);
+ //* -- Method 1 forEach for loop
+for (let i = 0; i < array.length; i++) {
+    array[i].forEach(number => {
+      if (number > 0) {
+        console.log("For Loop Method 1",number);
+      }
+    });
+  } 
 
-console.log("array4 საშუალო არითმტიკული არის:", averageResult) //: 4.666666666666667
+//* -- Method 2 forEach  
+array.forEach(positiveArray => {
+    positiveArray.forEach(number => {
+        if(number > 0 ) {
+            console.log("forEach Method 2", number)
+        }
+     })
+})
